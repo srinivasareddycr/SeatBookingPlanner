@@ -1,0 +1,259 @@
+<!-- <div>
+    <div class="submit-form">
+      <div *ngIf="!submitted">
+        <div class="form-group">
+          <label for="title">FirstName</label>
+          <input
+            type="text"
+            class="form-control"
+            id="title"
+            required [(ngModel)]="student.firstName"
+            name="firstName"
+          />
+        </div>
+  
+        <div class="form-group">
+          <label for="description">lastName</label>
+          <input
+            type="text"
+            class="form-control"
+            id="title"
+            required [(ngModel)]="student.lastName" name="lastName"/>
+          
+        </div>
+        <div class="form-group">
+            <label for="description">standard</label>
+            <input
+            type="text"
+            class="form-control"
+            id="title"
+            required [(ngModel)]="student.standard" name="standard"/>
+            
+          </div>
+
+          <div class="form-group">
+            <label for="description">dob</label>
+            <input
+            type="text"
+            class="form-control"
+            id="title"
+            required [(ngModel)]="student.dob" name="dob"/>
+            
+          </div>
+  
+        <button (click)="saveStudent()" class="btn btn-success">Submit</button>
+      </div>
+  
+      <div *ngIf="submitted">
+        <h4>Tutorial was submitted successfully!</h4>
+        <button class="btn btn-success" (click)="newTutorial()">Add</button>
+      </div>
+    </div>
+  </div> -->
+
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Design by foolishdeveloper.com -->
+   
+    <style media="screen">
+      *,
+*:before,
+*:after{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: #2392be;
+}
+.background{
+    width: 300px;
+    height: 50px;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    left: 50%;
+    top: 50%;
+}
+.background .shape{
+    height: 100px;
+    width: 100px;
+    position: absolute;
+    border-radius: 100%;
+}
+.shape:first-child{
+    background: linear-gradient(
+        #14c5b6,
+        #bb2ca8
+    );
+    left: -80px;
+    top: -80px;
+}
+.shape:last-child{
+    background: linear-gradient(
+        to right,
+        #32bbbb,
+        #1ed38d
+    );
+    right: -30px;
+    bottom: -80px;
+}
+form{
+    height: 1100px;
+    width: 300px;
+    background-color: rgba(209, 74, 164, 0.603);
+    position: absolute;
+    transform: translate(-50%,-50%);
+    top: 155%;
+    left: 50%;
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(52, 142, 226, 0.712);
+    box-shadow: 0 0 40px rgba(204, 44, 177, 0.6);
+    padding: 50px 35px;
+}
+form *{
+    font-family: 'Poppins',sans-serif;
+    color: #681d34;
+    letter-spacing: 0px;
+    outline: none;
+    border: none;
+}
+form h3{
+    font-size: 32px;
+    font-weight: 500;
+    line-height: 10px;
+    text-align: center;
+}
+
+label{
+    display: block;
+    margin-top: 30px;
+    font-size: 16px;
+    font-weight: 500;
+}
+input{
+    display: block;
+    height: 20px;
+    width: 100%;
+    background-color: rgba(255,255,255,0.07);
+    border-radius: 3px;
+    padding: 0 10px;
+    margin-top: 8px;
+    font-size: 14px;
+    font-weight: 300;
+}
+::placeholder{
+    color: #e5e5e5;
+}
+button{
+    margin-top: 50px;
+    width: 100%;
+    background-color: #1f96ce;
+    color: #080710;
+    padding: 5px 0;
+    font-size: 18px;
+    font-weight: 600;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.social{
+  margin-top: 30px;
+  display: flex;
+}
+
+.social div:hover{
+  background-color: rgba(29, 7, 7, 0.47);
+}
+
+    </style>
+</head>
+<body>
+    <div class="background">
+        <div class="shape"></div>
+        <div class="shape"></div>
+    </div>
+    <form>
+        <h4>Book Seat</h4>
+
+        <label for="username">EmployeeId</label>
+        <input
+            type="text"
+            class="form-control"
+            id="employeeId"
+            required [(ngModel)]="booking.employeeId" name="employeeId"/>
+
+
+
+
+        <label for="username">OfficeAddress</label>
+        <input
+            type="text"
+            class="form-control"
+            id="officeAddress"
+            required [(ngModel)]="booking.officeAddress" name="officeAddress"/>
+
+            <label for="username">floorNumber</label>
+            <input
+                type="text"
+                class="form-control"
+                id="floorNumber"
+                required [(ngModel)]="booking.floorNumber" name="floorNumber"/>
+
+                <label for="username">seatNumber</label>
+                <input
+                    type="text"
+                    class="form-control"
+                    id="seatNumber"
+                    required [(ngModel)]="booking.seatNumber" name="seatNumber"/>
+                <label for="username">bookingDate</label>
+                    <input
+                        type="text"
+                        class="form-control"
+                        id="bookingDate"
+                        required [(ngModel)]="booking.bookingDate" name="bookingDate"/>
+                    <label for="username">phoneNumber</label>
+                    <input
+                        type="text"
+                        class="form-control"
+                        id="phoneNumber"
+                        required [(ngModel)]="booking.phoneNumber" name="phoneNumber"/>
+                        
+
+                        <label for="username">bookingSlot</label>
+                        <input
+                            type="text"
+                            class="form-control"
+                            id="bookingSlot"
+                            required [(ngModel)]="booking.bookingSlot" name="bookingSlot"/>
+
+                            <label for="username">status</label>
+                            <input
+                                type="text"
+                                class="form-control"
+                                id="status"
+                                required [(ngModel)]="booking.status" name="status"/>
+
+
+                                <label for="username">role</label>
+                                <input
+                                    type="text"
+                                    class="form-control"
+                                    id="role"
+                                    required [(ngModel)]="booking.role" name="role"/>
+
+                                    <label for="username">cancel</label>
+                                    <input
+                                        type="text"
+                                        class="form-control"
+                                        id="cancel"
+                                        required [(ngModel)]="booking.cancel" name="cancel"/>
+
+
+                        <button (click)="save()" class="btn btn-success">Book</button>
+                       
+        
+    </form>
+    
+</body>
+</html>

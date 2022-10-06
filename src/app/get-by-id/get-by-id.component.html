@@ -1,0 +1,82 @@
+<div class="col-sm-10 offset-sm-1">
+    <div class="row sm-3">
+        <label for="input bokingId" class="col-sm-2 col-form-label">Enter BookingId</label>
+        <div class="col-sm-5">
+            <input type="number" class="form-control" [(ngModel)]=book.id placeholder="Enter BookingId"
+                aria-label="Enter BookingId">
+        </div>
+        <!-- <div class="col-sm-5">
+            <input type="text" class="form-control" [(ngModel)]=stud.subject placeholder="Enter subject"
+                aria-label="Enter Input">
+        </div> -->
+    </div>
+    <br>
+    <div class="row sm-3">
+        <!-- <div class="col-sm-2 offset-sm-1">
+            <button type="button" class="btn btn-success" (click)="searchById(student.id)">Search by Id</button>
+        </div> -->
+        <div class="col-sm-2 offset-sm-1">
+            <button type="button" class="btn btn-success" (click)=" getBookingById(book.id)">Submit BookingId</button>
+        </div>
+    </div>
+</div>
+<br>
+<br>
+<table class="table table-striped">
+    <thead class="table-dark">
+        <tr>
+            
+            <th scope="col">BookingId</th>
+            <th scope="col">EmployeeID</th>
+            <th scope="col">OfficeAddress</th>
+            <th scope="col">Floor Number</th>
+            <th scope="col">Seat Number</th>
+            <th scope="col">BookingDate</th>
+           <!-- // <th scope="col">PhoneNumber</th> -->
+            <th scope="col">Booking Slot</th>
+            <!-- <th scope="col">Status</th>
+           
+            <th scope="col">role</th>
+            <th scope = "col">cancel</th> -->
+            
+        </tr>
+    </thead>
+    <tbody>
+
+        <tr *ngFor="let s of booking">
+
+           <td>{{s.id}}</td>
+            <td>  {{s.employeeId}}</td>
+            
+            <td>
+                <span>{{s.officeAddress}}</span>
+            </td>
+            <td>
+                <span>{{s.floorNumber}}</span>
+            </td>
+            <td>
+                <span>{{s.seatNumber}}</span>
+            </td>
+            <td>
+                <span>{{s.bookingDate}}</span>
+            </td>
+            <!-- <td>
+                <span>{{s.phoneNumber}}</span>
+            </td> -->
+            <td>
+                <span>{{s.bookingSlot}}</span>
+            </td>
+            <!-- <td>
+                <span>{{s.status}</span>
+            </td>
+            <td>
+                <span>{{s.role}</span>
+            </td>
+            <td>
+                <span>{{s.cancel}</span>
+            </td> -->
+
+        </tr>
+    </tbody>
+
+</table>

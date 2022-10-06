@@ -1,0 +1,146 @@
+
+<div class="container py-5 text-center tableclr">
+
+    <table class="table table-bordered table-striped {
+      background-color: burlywood;   }">
+  
+      <thead>
+        <table class="table table-striped">
+            <thead class="table-dark">
+                <tr>
+                    
+                    <th scope="col">BookingId</th>
+                    <th scope="col">EmployeeID</th>
+                    <th scope="col">OfficeAddress</th>
+                    <th scope="col">Floor Number</th>
+                    <th scope="col">Seat Number</th>
+                    <th scope="col">BookingDate</th>
+                   <!-- // <th scope="col">PhoneNumber</th> -->
+                    <th scope="col">Booking Slot</th>
+                    <th scope= "col">Cancel</th>
+                    <th scope= "col">EDIT</th>
+                    <!-- <th scope="col">Status</th>
+                   
+                    <th scope="col">role</th>
+                    <th scope = "col">cancel</th> -->
+                    
+                </tr>
+            </thead>
+            <tbody>
+        
+                <tr *ngFor="let s of bookingsArray">
+        
+                   <td>{{s.id}}</td>
+                    <td>  {{s.employeeId}}</td>
+                    
+                    <td>
+                        <span>{{s.officeAddress}}</span>
+                    </td>
+                    <td>
+                        <span>{{s.floorNumber}}</span>
+                    </td>
+                    <td>
+                        <span>{{s.seatNumber}}</span>
+                    </td>
+                    <td>
+                        <span>{{s.bookingDate}}</span>
+                    </td>
+                    <!-- <td>
+                        <span>{{s.phoneNumber}}</span>
+                    </td> -->
+                    <td>
+                        <span>{{s.bookingSlot}}</span>
+                    </td>
+                    <!-- <td>
+                        <span>{{s.status}</span>
+                    </td>
+                    <td>
+                        <span>{{s.role}</span>
+                    </td>-->
+                    <td>
+                        <span>{{s.cancel}}</span>
+                    </td> 
+                    <td><a class="btn btn-info"(click)="updateBooking(s,s.id)">Edit</a></td>
+                </tr>
+            </tbody>
+        
+        </table>
+        
+        
+         
+          
+ 
+  
+  
+  <div>
+  
+        <form>
+            <h4>Cancel Seat</h4>
+            <label for="username">BookingId</label>
+            <input
+                type="number"
+                class="form-control"
+                id="id"
+                disabled=""  [(ngModel)]="bookings.id" name="id"/>
+    
+            <label for="username">EmployeeId</label>
+            <input
+                type="text"
+                class="form-control"
+                id="employeeId"
+                disabled [(ngModel)]="bookings.employeeId" name="employeeId"/>
+    
+    
+    
+    
+            <label for="username">OfficeAddress</label>
+            <input
+                type="text"
+                class="form-control"
+                id="officeAddress"
+                disabled [(ngModel)]="bookings.officeAddress" name="officeAddress"/>
+    
+                <label for="username">floorNumber</label>
+                <input
+                    type="text"
+                    class="form-control"
+                    id="floorNumber"
+                    disabled [(ngModel)]="bookings.floorNumber" name="floorNumber"/>
+    
+                    <label for="username">seatNumber</label>
+                    <input
+                        type="text"
+                        class="form-control"
+                        id="seatNumber"
+                        disabled [(ngModel)]="bookings.seatNumber" name="seatNumber"/>
+                    <label for="username">bookingDate</label>
+                        <input
+                            type="text"
+                            class="form-control"
+                            id="bookingDate"
+                            disabled [(ngModel)]="bookings.bookingDate" name="bookingDate"/>
+                        
+    
+                            <label for="username">bookingSlot</label>
+                            <input
+                                type="text"
+                                class="form-control"
+                                id="bookingSlot"
+                                disabled [(ngModel)]="bookings.bookingSlot" name="bookingSlot"/>
+    
+                                
+                                
+                            <label for="username">Cancel</label>
+                            <input
+                                type="text"
+                                class="form-control"
+                                id="Cancel"
+                                required [(ngModel)]="bookings.cancel" name="Cancel"/>
+    
+    
+                            <button (click)="update(bookings)" class="btn btn-success">ALTER</button>
+                           
+            
+        </form>
+    
+    </div>

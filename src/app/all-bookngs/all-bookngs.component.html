@@ -1,0 +1,46 @@
+<table class="table table-striped">
+    <thead class="table-dark">
+        <tr>
+            <th>BookingId</th>
+            <th scope="col">EmployeeID</th>
+            <th scope="col">OfficeAddress</th>
+            <th scope="col">Floor Number</th>
+            <th scope="col">Seat Number</th>
+            <th scope="col">BookingDate</th>
+            <!-- //<th scope="col">PhoneNumber</th> -->
+            <th scope="col">Booking Slot</th>
+          
+            
+        </tr>
+    </thead>
+    <tbody>
+
+        <tr *ngFor="let s of baookingsArray">
+
+           <td>{{s.id}}</td>
+            <td>  {{s.employeeId}}</td>
+            
+            <td>
+                <span>{{s.officeAddress}}</span>
+            </td>
+            <td>
+                <span>{{s.floorNumber}}</span>
+            </td>
+            <td>
+                <span>{{s.seatNumber}}</span>
+            </td>
+            <td>
+                <span>{{s.bookingDate}}</span>
+            </td>
+            <!-- <td>
+                <span>{{s.phoneNumber}}</span>
+            </td> -->
+            <td>
+                <span>{{s.bookingSlot}}</span>
+            </td>
+           
+
+        </tr>
+    </tbody>
+
+</table>
